@@ -1,0 +1,14 @@
+language: node_js
+
+cache: yarn
+
+node_js:
+  - '6'
+  - '7'
+  - '8'
+
+before_script:
+  - "npm install selenium-standalone@latest -g"
+  - "selenium-standalone start > /dev/null 2>&1 &"
+
+script: "yarn run test"
